@@ -6,8 +6,8 @@
 
 #### 列表页
 
-![image](https://bbs.tampermonkey.net.cn/data/attachment/album/202402/06/172302dcyc822za2e0eauu.png)
+![列表](https://s2.loli.net/2024/02/06/LSve8ma7DVZH4Pb.png)
 
 #### 详情页
 
-![image](https://bbs.tampermonkey.net.cn/data/attachment/album/202402/06/170737pccl3inabtyjj2bi.png)
+![详情](https://s2.loli.net/2024/02/06/av7wEBsFIzoWRHP.png)
