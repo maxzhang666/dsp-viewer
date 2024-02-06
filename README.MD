@@ -4,8 +4,6 @@
 
 ### 插件效果
 
-#### 列表
-
-![image](https://i2.100024.xyz/2024/02/06/pbiyvk.webp)
-
 #### 详情
+
+![image](https://bbs.tampermonkey.net.cn/data/attachment/album/202402/06/170737pccl3inabtyjj2bi.png)
