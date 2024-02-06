@@ -1,13 +1,15 @@
 // ==UserScript==
-// @name       dsp-viewer
-// @namespace  maxzhang666/dsp-viewer
-// @version    0.0.1
-// @author     maxzhang666
-// @icon       https://www.dsp2b.com/favicon.ico
-// @include    https://www.dsp2b.com/*
-// @include    https://www.dsp2b.com/zh-CN/blueprint/*
-// @grant      GM_addStyle
-// @grant      unsafeWindow
+// @name         DSP2B戴森球蓝图预览工具
+// @namespace    maxzhang666/dsp-viewer
+// @version      0.0.1
+// @author       maxzhang666
+// @description  快速预览戴森球蓝图
+// @license      MIT
+// @icon         https://www.dsp2b.com/favicon.ico
+// @include      https://www.dsp2b.com/*
+// @include      https://www.dsp2b.com/zh-CN/blueprint/*
+// @grant        GM_addStyle
+// @grant        unsafeWindow
 // ==/UserScript==
 
 (e=>{if(typeof GM_addStyle=="function"){GM_addStyle(e);return}const t=document.createElement("style");t.textContent=e,document.head.append(t)})(' .dsp-viewer{padding:1em 2em;border:none;border-radius:5px;font-weight:700;letter-spacing:5px;text-transform:uppercase;cursor:pointer;color:#2c9caf;transition:all 1s;font-size:15px;position:relative;overflow:hidden;outline:2px solid #2c9caf}.dsp-viewer:hover{color:#fff;transform:scale(1.1);outline:2px solid #70bdca;box-shadow:4px 5px 17px -4px #268391}.dsp-viewer:before{content:"";position:absolute;left:-50px;top:0;width:0;height:100%;background-color:#2c9caf;transform:skew(45deg);z-index:-1;transition:width 1s}.dsp-viewer:hover:before{width:250%}.dsp-viewer-box,details{display:flex;justify-content:center;padding-bottom:15px} ');
