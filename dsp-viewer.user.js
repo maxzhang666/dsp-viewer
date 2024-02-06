@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name       dsp-viewer
-// @namespace  npm/vite-plugin-monkey
-// @version    0.0.0
-// @author     monkey
-// @icon       https://vitejs.dev/logo.svg
+// @namespace  maxzhang666/dsp-viewer
+// @version    0.0.1
+// @author     maxzhang666
+// @icon       https://www.dsp2b.com/favicon.ico
 // @include    https://www.dsp2b.com/*
 // @include    https://www.dsp2b.com/zh-CN/blueprint/*
 // @grant      GM_addStyle
@@ -16,24 +16,23 @@
   'use strict';
 
   var _unsafeWindow = /* @__PURE__ */ (() => "undefined" != typeof unsafeWindow ? unsafeWindow : void 0)();
-  console.log("hello world"), _unsafeWindow.addEventListener("popstate", () => {
-    console.log("页面变动");
+  _unsafeWindow.addEventListener("popstate", () => {
   }), setInterval(function process() {
     let url = _unsafeWindow.location.href;
-    if (console.log(`url: ${url}, currentUrl: ${currentUrl}`), currentUrl === url)
+    if (currentUrl === url)
       return;
-    /dsp2b\.com\/zh-CN(?:\?.*|\/?)$/i.test(url) && (console.log("列表页"), function listInit() {
+    /dsp2b\.com\/zh-CN(?:\?.*|\/?)$/i.test(url) && function listInit() {
       _unsafeWindow.document.querySelectorAll(".ant-card-cover").forEach((ele) => {
         ele.querySelectorAll(".dsp-viewer").forEach((btn) => {
           btn.remove();
         }), ele.append(getBtn());
       });
-    }());
-    /dsp2b\.com\/zh-CN\/blueprint/i.test(url) && (console.log("内容页"), function detailInit() {
+    }();
+    /dsp2b\.com\/zh-CN\/blueprint/i.test(url) && function detailInit() {
       let desc = _unsafeWindow.document.querySelector(".markdown-body");
       if (desc)
         return void desc.before(getBtn("details"));
-    }());
+    }();
     currentUrl = url;
   }, 500);
   let currentUrl = "";
@@ -56,7 +55,7 @@
           _unsafeWindow.open(`https://dsp.huizhek.com/?bp=${id}`);
         }
       }(event, suffix);
-    }, div.append(btn), div;
+    }, "list" == suffix ? btn : (div.append(btn), div);
   }
 
 })();
