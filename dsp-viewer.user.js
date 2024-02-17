@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSP2B戴森球蓝图预览工具
 // @namespace    maxzhang666/dsp-viewer
-// @version      0.0.2
+// @version      0.0.3
 // @author       maxzhang666
 // @description  快速预览戴森球蓝图
 // @license      MIT
@@ -36,9 +36,10 @@
   function listInit(type = "cn") {
     let cards;
     cards = "cn" == type ? _unsafeWindow.document.querySelectorAll(".ant-card-cover") : _unsafeWindow.document.querySelectorAll(".o-blueprint-card__cover"), cards.forEach((ele) => {
+      var _a;
       ele.querySelectorAll(".dsp-viewer").forEach((btn) => {
         btn.remove();
-      }), "cn" == type ? ele.append(getBtn("list", type)) : ele.after(getBtn("list", type));
+      }), "cn" == type ? ((_a = ele.querySelector(".dsp-viewer-cn")) == null ? void 0 : _a.remove(), ele.append(getBtn("list", type))) : ele.after(getBtn("list", type));
     });
   }
   function detailInit(type = "cn") {
