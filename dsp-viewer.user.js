@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DSP2B戴森球蓝图预览工具
 // @namespace    maxzhang666/dsp-viewer
-// @version      0.0.3
+// @version      0.0.4
 // @author       maxzhang666
 // @description  快速预览戴森球蓝图
 // @license      MIT
@@ -26,7 +26,7 @@
     let url = _unsafeWindow.location.href;
     if (currentUrl === url)
       return;
-    /dsp2b\.com\/zh-CN(?:\?.*|\/?)$/i.test(url) && listInit();
+    (/dsp2b\.com\/zh-CN(?:\?.*|\/?)$/i.test(url) || /dsp2b\.com\/zh-CN\/collection/i.test(url)) && listInit();
     /dsp2b\.com\/zh-CN\/blueprint/i.test(url) && detailInit();
     /dysonsphereblueprints\.com\/blueprints/i.test(url) && detailInit("en");
     /dysonsphereblueprints\.com(\/(blueprints\?search=[\w&=]*))?\/?$/.test(url) && listInit("en");
