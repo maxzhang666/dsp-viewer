@@ -24,8 +24,7 @@
   _unsafeWindow.addEventListener("popstate", () => {
   }), setInterval(function process() {
     let url = _unsafeWindow.location.href;
-    if (currentUrl === url)
-      return;
+    if (currentUrl === url) return;
     (/dsp2b\.com\/zh-CN(?:\?.*|\/?)$/i.test(url) || /dsp2b\.com\/zh-CN\/collection/i.test(url)) && listInit();
     /dsp2b\.com\/zh-CN\/blueprint/i.test(url) && detailInit();
     /dysonsphereblueprints\.com\/blueprints/i.test(url) && detailInit("en");
@@ -55,8 +54,7 @@
         if ("list" == suffix2) {
           let a = (_a = event2.target.parentNode) == null ? void 0 : _a.querySelector("a");
           a || (a = (_c = (_b = event2.target.parentNode) == null ? void 0 : _b.parentNode) == null ? void 0 : _c.querySelector("a")), a && (url = a.href);
-        } else
-          url = currentUrl;
+        } else url = currentUrl;
         regex = "cn" == type2 ? /\/blueprint\/([a-f0-9]+)$/ : /\/blueprints\/(.*)$/;
         const match = url.match(regex);
         match && match.length > 0 && (id = match[1]);
